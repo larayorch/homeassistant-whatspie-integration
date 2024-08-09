@@ -30,7 +30,7 @@ def send_whatsapp_text_message(to, message, api_token, from_number, country_code
     if not WHATSPIE_API_ENDPOINT:
         return False
 
-    resp = requests.post(f'{settings.WHATSPIE_API_ENDPOINT}/messages',
+    resp = requests.post(f'{WHATSPIE_API_ENDPOINT}/messages',
                      data=json.dumps({
                          'receiver': sanitize_number(str(to), country_code),
                          'device': from_number,
